@@ -12,8 +12,8 @@ env:
 
 jobs:
 
-  ApiExceptions.Core:
-    name: ApiExceptions.Core
+  ApiExceptions-Core:
+    name: ApiExceptions-Core
     runs-on: ubuntu-latest
     steps:
 
