@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using System;
 using System.Net;
 
 namespace BitzArt.ApiExceptions
 {
-    /*public static class ApiExceptionExtensions
+    public static class ApiExceptionExtensions
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)
         {
@@ -29,5 +28,5 @@ namespace BitzArt.ApiExceptions
                 });
             });
         }
-    }*/
+    }
 }
