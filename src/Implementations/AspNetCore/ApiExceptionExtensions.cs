@@ -7,7 +7,7 @@ namespace BitzArt.ApiExceptions
 {
     public static class ApiExceptionExtensions
     {
-        public static void ConfigureExceptionHandler(this IApplicationBuilder app)
+        public static void ConfigureApiExceptionHandler(this IApplicationBuilder app)
         {
             app.UseExceptionHandler(appError =>
             {
