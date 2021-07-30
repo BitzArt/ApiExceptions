@@ -35,4 +35,4 @@ jobs:
           dotnet pack src/Core/Core.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
 
       - name: Push
-        run: dotnet nuget push BitzArt.ApiExceptions.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
+        run: dotnet nuget push BitzArt.ApiExceptions.Core${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
