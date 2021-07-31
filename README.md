@@ -16,4 +16,6 @@ For any custom status codes you can use ApiException class:
 
     throw new ApiException(HttpStatusCode.Forbidden, "your message");
     
-List of implemented exceptions will be availiable later. For now you can see file names in source code.
+You can see all availiable exception classes here:
+
+https://github.com/BitzArt/ApiExceptions/tree/main/src/Core/Exceptions
