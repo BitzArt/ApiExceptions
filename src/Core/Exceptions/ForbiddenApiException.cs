@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class ForbiddenApiException : ApiException
+    public class ForbiddenApiException : CustomApiException
     {
-        public ForbiddenApiException(string message) : base(HttpStatusCode.Forbidden, message) { }
+        public ForbiddenApiException(string message = null) : base(HttpStatusCode.Forbidden, message ?? "Forbidden") { }
     }
 }

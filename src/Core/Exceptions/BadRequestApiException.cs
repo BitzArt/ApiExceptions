@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class BadRequestApiException : ApiException
+    public class BadRequestApiException : CustomApiException
     {
-        public BadRequestApiException(string message) : base(HttpStatusCode.BadRequest, message) { }
+        public BadRequestApiException(string message = null) : base(HttpStatusCode.BadRequest, message ?? "Bad request") { }
     }
 }

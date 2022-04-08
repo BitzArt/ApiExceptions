@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class NoContentException : ApiException
+    public class NoContentApiException : CustomApiException
     {
-        public NoContentException(string message) : base(HttpStatusCode.NoContent, message) { }
+        public NoContentApiException(string message = null) : base(HttpStatusCode.NoContent, message ?? "No Content") { }
     }
 }

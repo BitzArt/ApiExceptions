@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class ConflictApiException : ApiException
+    public class ConflictApiException : CustomApiException
     {
-        public ConflictApiException(string message) : base(HttpStatusCode.Conflict, message) { }
+        public ConflictApiException(string message = null) : base(HttpStatusCode.Conflict, message ?? "Conflict") { }
     }
 }

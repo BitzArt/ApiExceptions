@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class MethodNotAllowedException : ApiException
+    public class MethodNotAllowedApiException : CustomApiException
     {
-        public MethodNotAllowedException(string message) : base(HttpStatusCode.MethodNotAllowed, message) { }
+        public MethodNotAllowedApiException(string message = null) : base(HttpStatusCode.MethodNotAllowed, message ?? "Method not allowed") { }
     }
 }

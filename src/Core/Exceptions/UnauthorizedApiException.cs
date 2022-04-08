@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class UnauthorizedException : ApiException
+    public class UnauthorizedApiException : CustomApiException
     {
-        public UnauthorizedException(string message) : base(HttpStatusCode.Unauthorized, message) { }
+        public UnauthorizedApiException(string message = null) : base(HttpStatusCode.Unauthorized, message ?? "Unauthorized") { }
     }
 }

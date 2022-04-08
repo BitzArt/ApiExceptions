@@ -2,8 +2,8 @@
 
 namespace BitzArt.ApiExceptions
 {
-    public class NotFoundException : ApiException
+    public class NotFoundApiException : CustomApiException
     {
-        public NotFoundException(string message) : base(HttpStatusCode.NotFound, message) { }
+        public NotFoundApiException(string message = null) : base(HttpStatusCode.NotFound, message ?? "Not found") { }
     }
 }
