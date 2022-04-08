@@ -15,7 +15,7 @@ namespace BitzArt.ApiExceptions
                 {
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     var statusCode = HttpStatusCode.InternalServerError;
-                    if (contextFeature.Error is ApiException apiException)
+                    if (contextFeature.Error is ApiExceptionBase apiException)
                     {
                         statusCode = apiException.StatusCode;
                     }
