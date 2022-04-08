@@ -3,13 +3,8 @@ using System.Net;
 
 namespace BitzArt.ApiExceptions
 {
-    public class ApiException : Exception
+    public class ApiException : ApiExceptionBase
     {
-        public HttpStatusCode StatusCode { get; set; }
-
-        public ApiException(HttpStatusCode statusCode, string message) : base(message)
-        {
-            StatusCode = statusCode;
-        }
+        public ApiException(HttpStatusCode statusCode, string message) : base(statusCode, message) { }
     }
 }
