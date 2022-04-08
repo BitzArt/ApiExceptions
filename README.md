@@ -8,13 +8,13 @@ Add this code to your Startup.Configure method:
   
 Then, anywhere in your code, you can throw exceptions like:
 
-    throw new NotFoundException("response message here");
+    throw new NotFoundApiException("response message here");
     
 This will get converted into a http request with appropriate status code (in this case - 404).
 
 For any custom status codes you can use ApiException class:
 
-    throw new ApiException(HttpStatusCode.Forbidden, "your message");
+    throw new CustomApiException(HttpStatusCode.Forbidden, "your message");
     
 You can see all availiable exception classes here:
 
