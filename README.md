@@ -11,11 +11,3 @@ Then, anywhere in your code, you can throw exceptions like:
     throw ApiException.NotFound("response message here");
     
 This will get converted into a http request with appropriate status code (in this case - 404).
-
-For any custom status codes you can use ApiException class:
-
-    throw ApiException.Custom(HttpStatusCode.Forbidden, "your message");
-    
-You can see all availiable exception classes here:
-
-https://github.com/BitzArt/ApiExceptions/tree/main/src/Core/Exceptions
