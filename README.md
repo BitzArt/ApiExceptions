@@ -2,7 +2,7 @@ To use with Asp.Net Core, add nuget package to your project:
 
 https://www.nuget.org/packages/BitzArt.ApiExceptions.AspNetCore/
 
-Add this code to your Startup.Configure method:
+Add this code to your Startup.Configure method before controllers:
 
     app.ConfigureApiExceptionHandler();
   
