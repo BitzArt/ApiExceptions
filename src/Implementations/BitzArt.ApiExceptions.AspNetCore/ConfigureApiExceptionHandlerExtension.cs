@@ -17,19 +17,18 @@ namespace BitzArt.ApiExceptions
 
                     context.Response.StatusCode = 500;
                     context.Response.ContentType = "application/json";
-                    if (contextFeature is not null)
+                    if (contextFeature is null) return;
+
+                    if (contextFeature.Error is ApiException apiException)
                     {
-                        if (contextFeature.Error is ApiException apiException)
-                        {
-                            context.Response.StatusCode = apiException.StatusCode;
-                            var problem = new ProblemDetailsViewModel(apiException);
-                            await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
-                        }
-                        else
-                        {
-                            var problem = new ProblemDetailsViewModel(contextFeature.Error);
-                            await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
-                        }
+                        context.Response.StatusCode = apiException.StatusCode;
+                        var problem = new ProblemDetailsViewModel(apiException);
+                        await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
+                    }
+                    else
+                    {
+                        var problem = new ProblemDetailsViewModel(contextFeature.Error);
+                        await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
                     }
                 });
             });
