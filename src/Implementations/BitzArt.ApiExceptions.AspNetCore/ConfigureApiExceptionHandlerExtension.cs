@@ -16,7 +16,7 @@ namespace BitzArt.ApiExceptions
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
 
                     context.Response.StatusCode = 500;
-                    context.Response.ContentType = "application/json";
+                    context.Response.ContentType = "application/problem+json";
                     if (contextFeature is null) return;
 
                     if (contextFeature.Error is ApiException apiException)
