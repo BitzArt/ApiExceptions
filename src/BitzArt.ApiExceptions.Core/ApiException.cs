@@ -6,6 +6,7 @@ namespace BitzArt
     public static class ApiException
     {
         public static CustomApiException Custom(HttpStatusCode statusCode, string message = null) => new CustomApiException(statusCode, message);
+
         public static BadRequestApiException BadRequest(string message = null) => new BadRequestApiException(message);
         public static ConflictApiException Conflict(string message = null) => new ConflictApiException(message);
         public static ForbiddenApiException Forbidden(string message = null) => new ForbiddenApiException(message);

@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>BitzArt.ApiExceptions</AssemblyName>
+    <AssemblyName>BitzArt.ApiExceptions.Core</AssemblyName>
     <RootNamespace>BitzArt.ApiExceptions</RootNamespace>
 
     <PackageId>BitzArt.ApiExceptions.Core</PackageId>
