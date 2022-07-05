@@ -1,4 +1,4 @@
-name: Release ApiExceptions.Core
+name: Release BitzArt.ApiExceptions.Core
 
 on:
   repository_dispatch:
@@ -30,9 +30,8 @@ jobs:
 
       - name: Build
         run: |
-          dotnet build src/Core/Core.csproj --configuration Release /p:Version=${VERSION}
-          dotnet test src/Core/Core.csproj --configuration Release /p:Version=${VERSION} --no-build
-          dotnet pack src/Core/Core.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+          dotnet build src/BitzArt.ApiExceptions.Core/BitzArt.ApiExceptions.Core.csproj --configuration Release /p:Version=${VERSION}
+          dotnet pack src/BitzArt.ApiExceptions.Core/BitzArt.ApiExceptions.Core.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
 
       - name: Push
         run: dotnet nuget push BitzArt.ApiExceptions.Core.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
