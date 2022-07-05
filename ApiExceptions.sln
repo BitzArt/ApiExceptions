@@ -18,7 +18,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C926A148-2053-4836-B8AA-D9548C35BDC9}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Publish ApiExceptions.AspNetCore.yml = .github\workflows\Publish ApiExceptions.AspNetCore.yml
+		.github\workflows\Publish ApiExceptions.Core.yml = .github\workflows\Publish ApiExceptions.Core.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.Core", "src\BitzArt.ApiExceptions.Core\BitzArt.ApiExceptions.Core.csproj", "{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +37,10 @@ Global
 		{B2E29FB2-B157-4316-A38E-C99D242AE1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2E29FB2-B157-4316-A38E-C99D242AE1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2E29FB2-B157-4316-A38E-C99D242AE1A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +50,7 @@ Global
 		{1BBD5146-9B5E-4DF8-BFB5-5B931B7E3183} = {C5995C9F-9B7F-4171-BEDE-C19F1E784ED6}
 		{B2E29FB2-B157-4316-A38E-C99D242AE1A9} = {8F84E1A4-E5B4-4FE5-8200-E5AF0ACCE41C}
 		{C926A148-2053-4836-B8AA-D9548C35BDC9} = {AA1D9106-BE0A-4171-AEC4-4BB6AA566DB7}
+		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2514CA0-588A-4092-97BB-4798EF9A6B72}

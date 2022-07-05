@@ -19,15 +19,15 @@ namespace BitzArt.ApiExceptions
                     context.Response.ContentType = "application/problem+json";
                     if (contextFeature is null) return;
 
-                    if (contextFeature.Error is ApiException apiException)
+                    if (contextFeature.Error is ApiExceptionBase apiException)
                     {
                         context.Response.StatusCode = apiException.StatusCode;
-                        var problem = new ProblemDetailsViewModel(apiException);
+                        var problem = new ProblemDetails(apiException);
                         await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
                     }
                     else
                     {
-                        var problem = new ProblemDetailsViewModel(contextFeature.Error);
+                        var problem = new ProblemDetails(contextFeature.Error);
                         await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
                     }
                 });
