@@ -1,18 +1,33 @@
 ﻿using BitzArt.ApiExceptions;
+using System.Collections.Generic;
 using System.Net;
 
 namespace BitzArt
 {
     public static class ApiException
     {
-        public static CustomApiException Custom(HttpStatusCode statusCode, string message = null) => new CustomApiException(statusCode, message);
+        public static CustomApiException Custom(HttpStatusCode statusCode, string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(statusCode, message, type, detail, instance, extensions);
 
-        public static BadRequestApiException BadRequest(string message = null) => new BadRequestApiException(message);
-        public static ConflictApiException Conflict(string message = null) => new ConflictApiException(message);
-        public static ForbiddenApiException Forbidden(string message = null) => new ForbiddenApiException(message);
-        public static MethodNotAllowedApiException MethodNotAllowed(string message = null) => new MethodNotAllowedApiException(message);
-        public static NoContentApiException NoContent(string message = null) => new NoContentApiException(message);
-        public static NotFoundApiException NotFound(string message = null) => new NotFoundApiException(message);
-        public static UnauthorizedApiException Unauthorized(string message = null) => new UnauthorizedApiException(message);
+        public static BadRequestApiException BadRequest(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static ConflictApiException Conflict(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static ForbiddenApiException Forbidden(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static MethodNotAllowedApiException MethodNotAllowed(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static NoContentApiException NoContent(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static NotFoundApiException NotFound(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
+
+        public static UnauthorizedApiException Unauthorized(string? message = null, string? type = null, string? detail = null, string? instance = null, IDictionary<string, object?>? extensions = null)
+            => new(message, type, detail, instance, extensions);
     }
 }

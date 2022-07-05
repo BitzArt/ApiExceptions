@@ -10,19 +10,19 @@ namespace BitzArt.ApiExceptions.AspNetCore.Sample.Controllers
         [HttpGet("notfound")]
         public IActionResult ThrowNotFound()
         {
-            throw ApiException.NotFound("sample 'not found' exception message");
+            throw BitzArt.ApiException.NotFound("sample 'not found' exception message");
         }
 
         [HttpGet("unauthorized")]
         public IActionResult ThrowUnauthorized()
         {
-            throw ApiException.Unauthorized("sample 'unauthorized' exception message");
+            throw BitzArt.ApiException.Unauthorized("sample 'unauthorized' exception message");
         }
 
         [HttpGet("custom/{statusCode}")]
         public IActionResult ThrowCustom([FromRoute] HttpStatusCode statusCode)
         {
-            throw ApiException.Custom(statusCode, "sample custom status code");
+            throw BitzArt.ApiException.Custom(statusCode, "sample custom status code");
         }
     }
 }
