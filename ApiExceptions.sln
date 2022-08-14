@@ -18,12 +18,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C926A148-2053-4836-B8AA-D9548C35BDC9}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Publish ApiExceptions.AspNetCore.yml = .github\workflows\Publish ApiExceptions.AspNetCore.yml
+		.github\workflows\Publish ApiExceptions.ProblemDetails.yml = .github\workflows\Publish ApiExceptions.ProblemDetails.yml
 		.github\workflows\Publish ApiExceptions.yml = .github\workflows\Publish ApiExceptions.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions", "src\BitzArt.ApiExceptions\BitzArt.ApiExceptions.csproj", "{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.ProblemDetails", "src\Implementations\BitzArt.ApiExceptions.ProblemDetails\BitzArt.ApiExceptions.ProblemDetails.csproj", "{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.ProblemDetails", "src\Implementations\BitzArt.ApiExceptions.ProblemDetails\BitzArt.ApiExceptions.ProblemDetails.csproj", "{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
