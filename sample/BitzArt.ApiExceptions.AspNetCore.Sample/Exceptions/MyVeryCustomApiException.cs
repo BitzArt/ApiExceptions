@@ -1,5 +1,4 @@
-﻿using BitzArt.ApiExceptions.Enum;
-using System.Net;
+﻿using System.Net;
 
 namespace BitzArt.ApiExceptions.AspNetCore.Sample
 {
