@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace BitzArt.ApiExceptions.AspNetCore.Sample
+﻿namespace BitzArt.ApiExceptions.AspNetCore.Sample
 {
     public class BasicCustomApiException : ApiExceptionBase
     {

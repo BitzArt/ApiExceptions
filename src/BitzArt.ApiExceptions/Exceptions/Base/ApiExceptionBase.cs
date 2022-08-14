@@ -1,6 +1,6 @@
-﻿using System;
+﻿using BitzArt.ApiExceptions.Enum;
+using System;
 using System.Collections.Generic;
-using BitzArt.ApiExceptions.Enum;
 
 namespace BitzArt.ApiExceptions
 {
