@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text.Json.Serialization;
 
 namespace BitzArt.ApiExceptions
@@ -26,7 +27,7 @@ namespace BitzArt.ApiExceptions
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public IDictionary<string, object?>? Extensions { get; set; }
 
-        public ProblemDetails(ApiExceptionBase apiException) : this(apiException.Message, apiException.Type, apiException.Detail, apiException.Instance, apiException.Extensions) { }
+        public ProblemDetails(ApiExceptionBase apiException) : this(apiException.Message, GetProblemType(apiException), apiException.Detail, apiException.Instance, apiException.Extensions) { }
 
         public ProblemDetails(Exception exception) : this(exception.Message)
         {
@@ -40,6 +41,13 @@ namespace BitzArt.ApiExceptions
             Detail = detail;
             Instance = instance;
             Extensions = extensions;
+        }
+
+        public static string? GetProblemType(ApiExceptionBase exception)
+        {
+            if (exception.Problem is not null) return exception.Problem;
+            if (!exception.UseDefaultTypeValue) return null;
+            return $"{Config.DocumentationLink}/{exception.StatusCode}";
         }
     }
 }

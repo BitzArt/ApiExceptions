@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>BitzArt.ApiExceptions.ProblemDetails</AssemblyName>
+		<RootNamespace>BitzArt.ApiExceptions</RootNamespace>
+
+		<PackageId>BitzArt.ApiExceptions.ProblemDetails</PackageId>
+		<Authors>BitzArt</Authors>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
+
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\BitzArt.ApiExceptions.Core\BitzArt.ApiExceptions.csproj" />
+	</ItemGroup>
+
+</Project>
