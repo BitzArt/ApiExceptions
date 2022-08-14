@@ -1,5 +1,4 @@
 ﻿using BitzArt.ApiExceptions;
-using BitzArt.ApiExceptions.Enum;
 using System.Collections.Generic;
 
 namespace BitzArt

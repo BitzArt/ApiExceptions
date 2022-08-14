@@ -32,7 +32,7 @@ namespace BitzArt.ApiExceptions.AspNetCore.Sample.Controllers
         }
 
         [HttpGet("custom/{statusCode}")]
-        public IActionResult ThrowUserSpecified([FromRoute] HttpStatusCode statusCode)
+        public IActionResult ThrowUserSpecified([FromRoute] int statusCode)
         {
             throw ApiException.Custom("this method returns user-specified status code", statusCode);
         }

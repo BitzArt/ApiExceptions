@@ -1,4 +1,4 @@
-﻿namespace BitzArt.ApiExceptions.Enum
+﻿namespace BitzArt.ApiExceptions
 {
     public enum ApiStatusCode : int
     {
