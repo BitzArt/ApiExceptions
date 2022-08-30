@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\Publish ApiExceptions.AspNetCore.yml = .github\workflows\Publish ApiExceptions.AspNetCore.yml
 		.github\workflows\Publish ApiExceptions.ProblemDetails.yml = .github\workflows\Publish ApiExceptions.ProblemDetails.yml
 		.github\workflows\Publish ApiExceptions.yml = .github\workflows\Publish ApiExceptions.yml
+		.github\workflows\Tests.yml = .github\workflows\Tests.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions", "src\BitzArt.ApiExceptions\BitzArt.ApiExceptions.csproj", "{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}"
@@ -28,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.Probl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{633F6437-E58A-420F-AE01-7FDC6B7E2CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.Tests", "tests\BitzArt.ApiExceptions.Tests\BitzArt.ApiExceptions.Tests.csproj", "{D9311895-F541-4816-BD05-1DF39C86A01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.Tests", "tests\BitzArt.ApiExceptions.Tests\BitzArt.ApiExceptions.Tests.csproj", "{D9311895-F541-4816-BD05-1DF39C86A01B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.ProblemDetails.Tests", "tests\BitzArt.ApiExceptions.ProblemDetails.Tests\BitzArt.ApiExceptions.ProblemDetails.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.ProblemDetails.Tests", "tests\BitzArt.ApiExceptions.ProblemDetails.Tests\BitzArt.ApiExceptions.ProblemDetails.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
