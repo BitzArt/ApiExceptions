@@ -4,6 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<AssemblyName>BitzArt.ApiExceptions.ProblemDetails</AssemblyName>
 		<RootNamespace>BitzArt.ApiExceptions</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
 
 		<PackageId>BitzArt.ApiExceptions.ProblemDetails</PackageId>
 		<Authors>BitzArt</Authors>
@@ -14,7 +15,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="BitzArt.ApiExceptions" Version="1.5.1" />
+	  <ProjectReference Include="..\..\BitzArt.ApiExceptions\BitzArt.ApiExceptions.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -4,6 +4,7 @@
 	  <TargetFramework>net6.0</TargetFramework>
 	  <Nullable>enable</Nullable>
 	  <RootNamespace>BitzArt.ApiExceptions</RootNamespace>
+	  <ImplicitUsings>enable</ImplicitUsings>
 
 	  <PackageId>BitzArt.ApiExceptions</PackageId>
 	  <Authors>BitzArt</Authors>
