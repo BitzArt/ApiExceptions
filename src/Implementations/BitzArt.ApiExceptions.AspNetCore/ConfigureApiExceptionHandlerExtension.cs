@@ -21,7 +21,7 @@ namespace BitzArt.ApiExceptions
 
                     if (contextFeature.Error is ApiExceptionBase apiException)
                     {
-                        context.Response.StatusCode = (int)apiException.StatusCode;
+                        context.Response.StatusCode = apiException.StatusCode;
                         var problem = new ProblemDetails(apiException);
                         await context.Response.WriteAsync(JsonSerializer.Serialize(problem));
                     }

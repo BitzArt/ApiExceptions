@@ -1,18 +1,21 @@
-﻿using System.Net;
-
-namespace BitzArt.ApiExceptions.AspNetCore.Sample
+﻿namespace BitzArt.ApiExceptions.AspNetCore.Sample
 {
     public class MyVeryCustomApiException : ApiExceptionBase
     {
-        private const ApiStatusCode _statusCode = (ApiStatusCode)418;
-        private const string _link = "http://example.com/link-to-error-info";
+        private const int _statusCode = 418;
+        private const string _errorType = "http://example.com/link-to-error-info";
         private const string _msg = "Error message goes here";
 
-        private static readonly IDictionary<string, object?>? extensions = new Dictionary<string, object?>()
+        private static readonly object _extensions = new
         {
-            { "customField", "someValue" }
+            type = _errorType,
+            customField = "someValue"
         };
 
-        public MyVeryCustomApiException(string? details = null) : base(_msg, _statusCode, _link, details, extensions: extensions) { }
+        public MyVeryCustomApiException(string? detail = null) : base(_msg, _statusCode)
+        {
+            if (detail is not null) this.AddDetail(detail);
+            AddExtensions(_extensions);
+        }
     }
 }
