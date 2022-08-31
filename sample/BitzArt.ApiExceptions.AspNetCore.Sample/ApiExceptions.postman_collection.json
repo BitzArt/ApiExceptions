@@ -103,6 +103,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Anonymous",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/custom/anonymous",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"custom",
+								"anonymous"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

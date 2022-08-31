@@ -17,5 +17,11 @@ namespace BitzArt.ApiExceptions.AspNetCore.Sample.Controllers
         {
             throw new MyCustomPayloadApiException();
         }
+
+        [HttpGet("anonymous")]
+        public IActionResult ThrowMyAnonymousPayloadApiException()
+        {
+            throw new MyAnonymousPayloadApiException();
+        }
     }
 }
