@@ -1,3 +1,6 @@
+![Tests](https://github.com/BitzArt/ApiExceptions/actions/workflows/Tests.yml/badge.svg)
+
+
 # General
 
 This package defines `ApiExceptions` that can be thrown in any .Net applications.
