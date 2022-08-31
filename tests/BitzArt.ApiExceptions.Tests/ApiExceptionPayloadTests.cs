@@ -1,6 +1,6 @@
 namespace BitzArt.ApiExceptions.Tests;
 
-public class ExtensionTests
+public class ApiExceptionPayloadTests
 {
     [Theory]
     [InlineData("SomeKey", "SomeValue")]
@@ -9,9 +9,9 @@ public class ExtensionTests
     public void Add_WithKeyAndValue_AddsToExtensions(string key, object value)
     {
         var sut = new Sut();
-        sut.AddExtensions(key, value);
+        sut.Payload.Add(key, value);
 
-        var added = sut.Extensions.Single();
+        var added = sut.Payload.Data.Single();
         Assert.True(added.Key == key);
         Assert.True(added.Value == value);
     }
@@ -24,10 +24,10 @@ public class ExtensionTests
         var inner = new { a = "something", b = "something else" };
         var complex = new { outter = "this", inner };
 
-        sut.AddExtensions(complex);
+        sut.Payload.Add(complex);
 
-        Assert.Contains(sut.Extensions, x => x.Key == "outter" && (string)x.Value == "this");
-        Assert.Contains(sut.Extensions, x => x.Key == "inner" && x.Value == inner);
+        Assert.Contains(sut.Payload.Data, x => x.Key == "outter");
+        Assert.Contains(sut.Payload.Data, x => x.Key == "inner");
     }
 
     private class Sut : ApiExceptionBase

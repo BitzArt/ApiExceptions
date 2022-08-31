@@ -23,9 +23,7 @@ public class ApiExceptionBaseTests
     private class Sut : ApiExceptionBase
     {
         public Sut() : base() { }
-        public Sut(string message, ApiStatusCode statusCode = ApiStatusCode.Error, IDictionary<string, object>? extensions = null)
-            : base(message, statusCode, extensions)
-        {
-        }
+        public Sut(string message, ApiStatusCode statusCode = ApiStatusCode.Error)
+            : base(message, statusCode) { }
     }
 }

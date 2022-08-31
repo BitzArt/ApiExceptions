@@ -35,7 +35,7 @@ namespace BitzArt.ApiExceptions
         {
             var exception = new CustomApiException();
             var errorType = "some error type here";
-            exception.AddErrorType(errorType);
+            exception.Payload.SetErrorType(errorType);
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.ErrorType, errorType);
@@ -48,7 +48,7 @@ namespace BitzArt.ApiExceptions
         {
             var exception = new CustomApiException();
             var detail = "some detail here";
-            exception.AddDetail(detail);
+            exception.Payload.SetDetail(detail);
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Detail, detail);
@@ -61,7 +61,7 @@ namespace BitzArt.ApiExceptions
         {
             var exception = new CustomApiException();
             var instance = "some instance here";
-            exception.AddInstance(instance);
+            exception.Payload.SetInstance(instance);
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Instance, instance);
@@ -75,7 +75,7 @@ namespace BitzArt.ApiExceptions
         public void AddExtensions_OnApiException_EndsUpInProblemDetails(string key, object value)
         {
             var exception = new CustomApiException();
-            exception.AddExtensions(key, value);
+            exception.Payload.Add(key, value);
             var pd = new ProblemDetails(exception);
 
             Assert.Contains(pd.Extensions, x => x.Key == key && x.Value == value);

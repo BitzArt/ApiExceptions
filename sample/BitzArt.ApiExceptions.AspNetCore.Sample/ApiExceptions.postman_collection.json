@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "57196b06-423f-48e2-98a7-4e7e821d2878",
+		"name": "ApiExceptions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8614021"
+	},
+	"item": [
+		{
+			"name": "Predefined",
+			"item": [
+				{
+					"name": "NotFound",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/predefined/notfound",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"predefined",
+								"notfound"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unauthorized",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/predefined/unauthorized",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"predefined",
+								"unauthorized"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User specified",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/predefined/201",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"predefined",
+								"201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom",
+			"item": [
+				{
+					"name": "Basic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/custom/basic",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"custom",
+								"basic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payload",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiExceptions.AspNetCoreSample}}/custom/payload",
+							"host": [
+								"{{ApiExceptions.AspNetCoreSample}}"
+							],
+							"path": [
+								"custom",
+								"payload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ApiExceptions.AspNetCoreSample",
+			"value": "http://localhost:80",
+			"type": "string"
+		}
+	]
+}

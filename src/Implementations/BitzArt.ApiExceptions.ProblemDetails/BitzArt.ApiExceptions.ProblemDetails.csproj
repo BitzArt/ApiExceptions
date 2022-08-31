@@ -15,7 +15,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="BitzArt.ApiExceptions" Version="1.6.0" />
+	  <ProjectReference Include="..\..\BitzArt.ApiExceptions\BitzArt.ApiExceptions.csproj" />
 	</ItemGroup>
 
 </Project>

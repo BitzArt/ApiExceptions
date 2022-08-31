@@ -9,7 +9,7 @@
         internal const string DetailKey = "detail";
         internal const string InstanceKey = "instance";
 
-        internal static IEnumerable<string> SpecialKeys => new HashSet<string>
+        internal static IEnumerable<string> ReservedKeys => new HashSet<string>
         {
             ErrorTypeKey,
             UseDefaultErrorTypeKey,

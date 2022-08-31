@@ -25,7 +25,7 @@ public class ProblemDetails
     public IDictionary<string, object> Extensions { get; set; }
 
     public ProblemDetails(ApiExceptionBase apiException)
-        : this(apiException.Message, GetProblemType(apiException), apiException.GetDetail(), apiException.GetInstance(), apiException.Extensions)
+        : this(apiException.Message, GetProblemType(apiException), apiException.Payload.GetDetail(), apiException.Payload.GetInstance(), apiException.Payload.Data)
     {
     }
 
@@ -41,28 +41,25 @@ public class ProblemDetails
         Title = title;
         Detail = detail;
         Instance = instance;
-        ReadExtensions(extensions);
-    }
 
-    private void ReadExtensions(IDictionary<string, object>? extensions)
-    {
         if (extensions is null || !extensions.Any())
         {
             Extensions = new Dictionary<string, object>();
-            return;
         }
-
-        var extra = extensions
-                .Where(x => !Config.SpecialKeys.Contains(x.Key));
-        Extensions = new Dictionary<string, object>(extra);
+        else
+        {
+            var extra = extensions
+                .Where(x => !Config.ReservedKeys.Contains(x.Key));
+            Extensions = new Dictionary<string, object>(extra);
+        }
     }
 
     public static string? GetProblemType(ApiExceptionBase exception)
     {
-        var errorType = exception.GetErrorType();
+        var errorType = exception.Payload.GetErrorType();
         if (errorType is not null) return errorType;
 
-        var useDefault = exception.GetUseDefaultTypeValue();
+        var useDefault = exception.Payload.GetUseDefaultErrorTypeValue();
         if (useDefault.HasValue && useDefault == false) return null;
         return $"{Config.DocumentationLink}/{exception.StatusCode}";
     }
