@@ -5,7 +5,6 @@ public class ApiExceptionPayloadTests
     [Theory]
     [InlineData("SomeKey", "SomeValue")]
     [InlineData("Integer", 12345)]
-    [InlineData("PassingNull", null)]
     public void Add_WithKeyAndValue_AddsToExtensions(string key, object value)
     {
         var sut = new Sut();
