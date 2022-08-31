@@ -19,11 +19,13 @@ app.ConfigureApiExceptionHandler();
 ````
 Then, anywhere in your code, you can throw exceptions like:
 ````csharp
-throw ApiException.NotFound("response message here");
+throw ApiException.NotFound("sample 'not found' message");
 ````
 This will generate an http response with appropriate status code:
 
 ![404-screenshot](/docs/404-screenshot.png)
+
+These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc/rfc7807) standard.
 
 For further guidance, see this [Asp.Net Core Sample project](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample)
 
