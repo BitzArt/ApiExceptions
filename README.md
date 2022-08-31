@@ -28,6 +28,10 @@ This will generate an http response with appropriate status code:
 
 ![404-screenshot](/docs/404-screenshot.png)
 
+You can also add any custom fields:
+
+![anonymous-screenshot](/docs/anonymous-screenshot.png)
+
 These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc/rfc7807) standard.
 
 For further guidance, see this [Asp.Net Core Sample project](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample)
