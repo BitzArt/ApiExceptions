@@ -5,7 +5,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.ConfigureApiExceptionHandler();
+app.UseApiExceptionHandler();
 app.MapControllers();
 
 app.Run();
