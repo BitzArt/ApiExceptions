@@ -32,21 +32,19 @@ public static class WriteProblemDetailsExtension
 
     private static void ConfigureDefaultType(ProblemDetails problem, ApiExceptionBase apiException)
     {
-        if (problem.Data.ContainsKey(ProblemDetails.Keys.ErrorType)) return;
+        if (problem.ErrorType is not null) return;
         var useDefaultTypeValue = GetUseDefaultTypeValue(problem, apiException);
         if (useDefaultTypeValue)
         {
             var link = $"{Config.DocumentationLink}/{apiException.StatusCode}";
-            problem.Data[ProblemDetails.Keys.ErrorType] = link;
+            problem.ErrorType = link;
         }
     }
 
     private static bool GetUseDefaultTypeValue(ProblemDetails problem, ApiExceptionBase apiException)
     {
-        if (!apiException.Payload.Configurations.ContainsKey(Config.UseDefaultErrorTypeKey)) return true;
-
-        var obj = problem.Data[Config.UseDefaultErrorTypeKey];
-        if (obj is null) return true;
-        return (bool)obj;
+        var result = apiException.Payload.GetConfigurationEntry<bool?>(Config.UseDefaultErrorTypeKey);
+        if (result is null) return true;
+        return result.Value;
     }
 }

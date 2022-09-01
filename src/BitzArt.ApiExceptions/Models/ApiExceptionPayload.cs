@@ -80,7 +80,7 @@ public partial class ApiExceptionPayload
     {
         if (!dict.ContainsKey(key)) return default!;
 
-        var value = Data
+        var value = dict
             .Where(x => x.Key == key)
             .Single()
             .Value;
