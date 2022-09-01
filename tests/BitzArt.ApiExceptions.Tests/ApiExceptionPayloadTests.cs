@@ -8,7 +8,7 @@ public class ApiExceptionPayloadTests
     public void Add_WithKeyAndValue_AddsToExtensions(string key, object value)
     {
         var sut = new Sut();
-        sut.Payload.Add(key, value);
+        sut.Payload.AddData(key, value);
 
         var added = sut.Payload.Data.Single();
         Assert.True(added.Key == key);
@@ -23,7 +23,7 @@ public class ApiExceptionPayloadTests
         var inner = new { a = "something", b = "something else" };
         var complex = new { outter = "this", inner };
 
-        sut.Payload.Add(complex);
+        sut.Payload.AddData(complex);
 
         Assert.Contains(sut.Payload.Data, x => x.Key == "outter");
         Assert.Contains(sut.Payload.Data, x => x.Key == "inner");

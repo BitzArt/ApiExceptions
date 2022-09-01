@@ -10,9 +10,11 @@ namespace BitzArt.ApiExceptions
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Title, msg);
-            Assert.Null(pd.Instance);
-            Assert.Null(pd.Detail);
+
             Assert.Null(pd.ErrorType);
+            Assert.Null(pd.Detail);
+            Assert.Null(pd.Instance);
+
             Assert.False(pd.Extensions.Any());
         }
 
@@ -24,9 +26,11 @@ namespace BitzArt.ApiExceptions
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Title, msg);
-            var uri = new Uri(pd.ErrorType!);
-            Assert.Null(pd.Instance);
+
+            Assert.Null(pd.ErrorType);
             Assert.Null(pd.Detail);
+            Assert.Null(pd.Instance);
+
             Assert.False(pd.Extensions.Any());
         }
 
@@ -39,8 +43,11 @@ namespace BitzArt.ApiExceptions
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.ErrorType, errorType);
-            Assert.DoesNotContain(pd.Extensions,
-                x => x.Value is string stringValue && stringValue == errorType);
+
+            Assert.Null(pd.Detail);
+            Assert.Null(pd.Instance);
+
+            Assert.False(pd.Extensions.Any());
         }
 
         [Fact]
@@ -52,8 +59,11 @@ namespace BitzArt.ApiExceptions
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Detail, detail);
-            Assert.DoesNotContain(pd.Extensions,
-                x => x.Value is string stringValue && stringValue == detail);
+
+            Assert.Null(pd.ErrorType);
+            Assert.Null(pd.Instance);
+
+            Assert.False(pd.Extensions.Any());
         }
 
         [Fact]
@@ -65,8 +75,11 @@ namespace BitzArt.ApiExceptions
             var pd = new ProblemDetails(exception);
 
             Assert.Equal(pd.Instance, instance);
-            Assert.DoesNotContain(pd.Extensions,
-                x => x.Value is string stringValue && stringValue == instance);
+
+            Assert.Null(pd.ErrorType);
+            Assert.Null(pd.Detail);
+
+            Assert.False(pd.Extensions.Any());
         }
 
         [Theory]
@@ -75,7 +88,7 @@ namespace BitzArt.ApiExceptions
         public void AddExtensions_OnApiException_EndsUpInProblemDetails(string key, object value)
         {
             var exception = new CustomApiException();
-            exception.Payload.Add(key, value);
+            exception.Payload.AddData(key, value);
             var pd = new ProblemDetails(exception);
 
             Assert.Contains(pd.Extensions, x => x.Key == key && x.Value == value);

@@ -33,6 +33,6 @@ public class MyAnonymousPayloadApiException : ApiExceptionBase
             }
         };
 
-        Payload.Add(extraData);
+        Payload.AddData(extraData);
     }
 }
