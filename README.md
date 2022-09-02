@@ -17,8 +17,8 @@ https://www.nuget.org/packages/BitzArt.ApiExceptions.AspNetCore/
 
 Add these 2 lines of code to your `Program.cs`:
 ```csharp
-builder.Services.AddApiExceptionHandler();
-app.UseApiExceptionHandler();
+builder.Services.AddApiExceptionHandler(); // When configuring services
+app.UseApiExceptionHandler(); // Before controllers
 ```
 ## Usage:
 Then, anywhere in your code, you can throw exceptions like:
