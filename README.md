@@ -3,30 +3,24 @@
 
 # General
 
-This package defines `ApiExceptions` that can be thrown in any .Net applications.
-
-These `ApiExceptions` contain payloads that can be used by handlers.
+This library defines `ApiExceptions` that you can throw in your .Net applications.
 
 # Use with Asp.Net Core
 
-This package contains a predefined handler for Asp.Net Core
+You can always refer to this [Asp.Net Core Sample project](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample) for guidance.
 
-To use with Asp.Net Core, add nuget package to your project:
+## Setup:
+
+Add nuget package:
 
 https://www.nuget.org/packages/BitzArt.ApiExceptions.AspNetCore/
 
-Add this line of code to your `program.cs` when configuring services:
+Add these 2 lines of code to your `Program.cs`:
 ```csharp
 builder.Services.AddApiExceptionHandler();
-```
-And then call this method (before controllers):
-```csharp
 app.UseApiExceptionHandler();
 ```
-Your `program.cs` should look something like this:
-
-![program-cs-sample-screenshot](/docs/program-cs-sample-screenshot.png)
-
+## Usage:
 Then, anywhere in your code, you can throw exceptions like:
 ```csharp
 throw ApiException.NotFound("sample 'not found' message");
@@ -35,13 +29,12 @@ This will generate an http response with appropriate status code:
 
 ![404-screenshot](/docs/404-screenshot.png)
 
+ ## Extra:
 You can also add any custom fields:
 
 ![anonymous-screenshot](/docs/anonymous-screenshot.png)
 
 These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc/rfc7807) standard.
-
-For further guidance, see this [Asp.Net Core Sample project](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample)
 
 # Use outside of Asp.Net Core
 
