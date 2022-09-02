@@ -17,8 +17,6 @@ public class MyAnonymousPayloadApiException : ApiExceptionBase
 
     public MyAnonymousPayloadApiException()
     {
-        Payload.SetUseDefaultErrorTypeValue(false);
-
         var extraData = new
         {
             someString = "some value",
