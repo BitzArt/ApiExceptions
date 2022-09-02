@@ -1,6 +1,6 @@
-﻿namespace BitzArt.ApiExceptions
+﻿namespace BitzArt.ApiExceptions.AspNetCore
 {
-    public static partial class Config
+    internal static partial class Config
     {
         public const string UseDefaultErrorTypeKey = "useDefaultType";
 
