@@ -1,4 +1,6 @@
-﻿namespace BitzArt.ApiExceptions;
+﻿using BitzArt.ApiExceptions.AspNetCore;
+
+namespace BitzArt.ApiExceptions;
 
 public static class ApiExceptionPayloadExtensions
 {
