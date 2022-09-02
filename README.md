@@ -15,15 +15,22 @@ To use with Asp.Net Core, add nuget package to your project:
 
 https://www.nuget.org/packages/BitzArt.ApiExceptions.AspNetCore/
 
-Add this code to your Startup.Configure method before controllers:
-
-````csharp
+Add this line of code to your `program.cs` when configuring services:
+```csharp
+builder.Services.AddApiExceptionHandler();
+```
+And then call this method (before controllers):
+```csharp
 app.UseApiExceptionHandler();
-````
+```
+Your `program.cs` should look something like this:
+
+![program-cs-sample-screenshot](/docs/program-cs-sample-screenshot.png)
+
 Then, anywhere in your code, you can throw exceptions like:
-````csharp
+```csharp
 throw ApiException.NotFound("sample 'not found' message");
-````
+```
 This will generate an http response with appropriate status code:
 
 ![404-screenshot](/docs/404-screenshot.png)
