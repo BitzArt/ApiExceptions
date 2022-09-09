@@ -35,8 +35,8 @@ jobs:
 
       - name: Build
         run: |
-          dotnet build src/Implementations/BitzArt.ApiExceptions.AspNetCore/BitzArt.ApiExceptions.AspNetCore.csproj --configuration Release /p:Version=${VERSION}
-          dotnet pack src/Implementations/BitzArt.ApiExceptions.AspNetCore/BitzArt.ApiExceptions.AspNetCore.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+          dotnet build src/BitzArt.ApiExceptions.AspNetCore/BitzArt.ApiExceptions.AspNetCore.csproj --configuration Release /p:Version=${VERSION}
+          dotnet pack src/BitzArt.ApiExceptions.AspNetCore/BitzArt.ApiExceptions.AspNetCore.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
 
       - name: Push
         run: dotnet nuget push BitzArt.ApiExceptions.AspNetCore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Implementations\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\src\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

@@ -38,12 +38,8 @@ These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc
 
 # Use outside of Asp.Net Core
 
-To use the exceptions in your applications, add this nuget package to your project:
+To use `ApiExceptions` in your applications, add this nuget package to your project:
 
 https://www.nuget.org/packages/BitzArt.ApiExceptions/
 
 The base package contains no handlers, so you will have to implement them yourself.
-
-If you would like to work with ProblemDetails model, you can consider this package:
-
-https://www.nuget.org/packages/BitzArt.ApiExceptions.ProblemDetails/

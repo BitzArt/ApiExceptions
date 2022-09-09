@@ -35,14 +35,14 @@ public class ApiExceptionHandler : IApiExceptionHandler
         _httpContext.Response.StatusCode = apiException.StatusCode;
 
         var defaultErrorType = GetDefaultErrorType(apiException);
-        if (defaultErrorType is not null) apiException.Payload.SetErrorType(defaultErrorType);
+        if (defaultErrorType is not null) apiException.ErrorType = defaultErrorType;
 
         return new ProblemDetails(apiException);
     }
 
     private string? GetDefaultErrorType(ApiExceptionBase apiException)
     {
-        if (apiException.Payload.GetErrorType() is not null) return null;
+        if (apiException.ErrorType is not null) return null;
 
         var useDefaultTypeValue = GetUseDefaultTypeValue(apiException);
         if (!useDefaultTypeValue) return null;
@@ -55,8 +55,7 @@ public class ApiExceptionHandler : IApiExceptionHandler
     {
         if (_options.DisableDefaultTypeValues) return false;
 
-        var value = apiException.Payload
-            .GetConfigurationEntry<bool?>(Config.UseDefaultErrorTypeKey);
+        var value = apiException.UseDefaultErrorTypeValue;
 
         if (value is null) return true;
 

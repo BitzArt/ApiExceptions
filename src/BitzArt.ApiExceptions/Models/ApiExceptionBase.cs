@@ -1,6 +1,6 @@
 ﻿namespace BitzArt.ApiExceptions;
 
-public abstract class ApiExceptionBase : Exception
+public abstract partial class ApiExceptionBase : Exception
 {
     public int StatusCode { get; set; }
 

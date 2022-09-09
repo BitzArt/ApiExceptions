@@ -5,9 +5,7 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{615B001B-EF7F-4F09-B2CB-383F169E4627}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{C5995C9F-9B7F-4171-BEDE-C19F1E784ED6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNetCore", "src\Implementations\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj", "{1BBD5146-9B5E-4DF8-BFB5-5B931B7E3183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNetCore", "src\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj", "{1BBD5146-9B5E-4DF8-BFB5-5B931B7E3183}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{8F84E1A4-E5B4-4FE5-8200-E5AF0ACCE41C}"
 EndProject
@@ -18,20 +16,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C926A148-2053-4836-B8AA-D9548C35BDC9}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Publish ApiExceptions.AspNetCore.yml = .github\workflows\Publish ApiExceptions.AspNetCore.yml
-		.github\workflows\Publish ApiExceptions.ProblemDetails.yml = .github\workflows\Publish ApiExceptions.ProblemDetails.yml
 		.github\workflows\Publish ApiExceptions.yml = .github\workflows\Publish ApiExceptions.yml
 		.github\workflows\Tests.yml = .github\workflows\Tests.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions", "src\BitzArt.ApiExceptions\BitzArt.ApiExceptions.csproj", "{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.ProblemDetails", "src\Implementations\BitzArt.ApiExceptions.ProblemDetails\BitzArt.ApiExceptions.ProblemDetails.csproj", "{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{633F6437-E58A-420F-AE01-7FDC6B7E2CA3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.Tests", "tests\BitzArt.ApiExceptions.Tests\BitzArt.ApiExceptions.Tests.csproj", "{D9311895-F541-4816-BD05-1DF39C86A01B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.ProblemDetails.Tests", "tests\BitzArt.ApiExceptions.ProblemDetails.Tests\BitzArt.ApiExceptions.ProblemDetails.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNetCore.Tests", "tests\BitzArt.ApiExceptions.AspNetCore.Tests\BitzArt.ApiExceptions.AspNetCore.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +46,6 @@ Global
 		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9311895-F541-4816-BD05-1DF39C86A01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9311895-F541-4816-BD05-1DF39C86A01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9311895-F541-4816-BD05-1DF39C86A01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -68,12 +59,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C5995C9F-9B7F-4171-BEDE-C19F1E784ED6} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
-		{1BBD5146-9B5E-4DF8-BFB5-5B931B7E3183} = {C5995C9F-9B7F-4171-BEDE-C19F1E784ED6}
+		{1BBD5146-9B5E-4DF8-BFB5-5B931B7E3183} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
 		{B2E29FB2-B157-4316-A38E-C99D242AE1A9} = {8F84E1A4-E5B4-4FE5-8200-E5AF0ACCE41C}
 		{C926A148-2053-4836-B8AA-D9548C35BDC9} = {AA1D9106-BE0A-4171-AEC4-4BB6AA566DB7}
 		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
-		{56A14D91-ACF4-4C1D-B47A-D608D0BD01C8} = {C5995C9F-9B7F-4171-BEDE-C19F1E784ED6}
 		{D9311895-F541-4816-BD05-1DF39C86A01B} = {633F6437-E58A-420F-AE01-7FDC6B7E2CA3}
 		{BF689FDE-D5BE-4852-A16A-066EDE5E71B8} = {633F6437-E58A-420F-AE01-7FDC6B7E2CA3}
 	EndGlobalSection

@@ -1,17 +1,10 @@
 ﻿using System.Text.Json.Serialization;
+using Keys = BitzArt.ApiExceptions.ApiExceptionPayload.Keys;
 
 namespace BitzArt.ApiExceptions;
 
 public class ProblemDetails
 {
-    public static class Keys
-    {
-        public const string Title = "title";
-        public const string ErrorType = "type";
-        public const string Detail = "detail";
-        public const string Instance = "instance";
-    }
-
     private static IEnumerable<string> ReservedKeys => new List<string>
     {
         Keys.Title,
