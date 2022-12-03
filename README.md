@@ -13,7 +13,9 @@ You can always refer to this [Asp.Net Core Sample project](https://github.com/Bi
 
 Add nuget package:
 
+```
 dotnet add package BitzArt.ApiExceptions.AspNetCore
+```
 
 Add these 2 lines of code to your `Program.cs`:
 ```csharp
