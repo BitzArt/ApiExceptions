@@ -12,6 +12,10 @@ public static partial class ApiException
         (string message, int statusCode, ApiExceptionPayload? payload = null)
         => new(message, statusCode, payload);
 
+    public static InternalErrorApiException InternalError
+        (string message, ApiExceptionPayload? payload = null)
+        => new(message, payload);
+
     public static BadRequestApiException BadRequest
         (string message, ApiExceptionPayload? payload = null)
         => new(message, payload);

@@ -12,6 +12,13 @@ public class CustomApiException : ApiExceptionBase
 
 }
 
+public class InternalErrorApiException : ApiExceptionBase
+{
+    public InternalErrorApiException(string message = "Internal error", ApiExceptionPayload? payload = null)
+        : base(message, ApiStatusCode.Error, payload)
+    { }
+}
+
 public class BadRequestApiException : ApiExceptionBase
 {
     public BadRequestApiException(string message = "Bad request", ApiExceptionPayload? payload = null)
