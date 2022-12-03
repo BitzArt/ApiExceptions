@@ -42,6 +42,8 @@ These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc
 
 To use `ApiExceptions` in your applications, add this nuget package to your project:
 
-https://www.nuget.org/packages/BitzArt.ApiExceptions/
+```
+dotnet add package BitzArt.ApiExceptions
+```
 
 The base package contains no handlers, so you will have to implement them yourself.
