@@ -19,8 +19,4 @@
     <PackageReference Include="OpenTelemetry" Version="1.5.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj" />
-  </ItemGroup>
-
 </Project>
