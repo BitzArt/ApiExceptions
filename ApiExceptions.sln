@@ -15,7 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AA1D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C926A148-2053-4836-B8AA-D9548C35BDC9}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\Publish ApiExceptions.AspNetCore.yml = .github\workflows\Publish ApiExceptions.AspNetCore.yml
 		.github\workflows\Publish ApiExceptions.yml = .github\workflows\Publish ApiExceptions.yml
 		.github\workflows\Tests.yml = .github\workflows\Tests.yml
 	EndProjectSection
@@ -28,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNetCore.Tests", "tests\BitzArt.ApiExceptions.AspNetCore.Tests\BitzArt.ApiExceptions.AspNetCore.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.AspNetCore.OpenTelemetry", "src\BitzArt.ApiExceptions.AspNetCore.OpenTelemetry\BitzArt.ApiExceptions.AspNetCore.OpenTelemetry.csproj", "{F431B580-4D6A-4658-8256-4F7AEE0AA03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.OpenTelemetry", "src\BitzArt.ApiExceptions.OpenTelemetry\BitzArt.ApiExceptions.OpenTelemetry.csproj", "{F431B580-4D6A-4658-8256-4F7AEE0AA03C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

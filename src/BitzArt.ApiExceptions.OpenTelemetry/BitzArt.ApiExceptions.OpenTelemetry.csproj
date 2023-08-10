@@ -2,11 +2,11 @@
 
   <PropertyGroup>
 	  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-	  <AssemblyName>BitzArt.ApiExceptions.AspNetCore</AssemblyName>
-	  <RootNamespace>BitzArt.ApiExceptions.AspNetCore</RootNamespace>
+	  <AssemblyName>BitzArt.ApiExceptions.OpenTelemetry</AssemblyName>
+	  <RootNamespace>BitzArt.ApiExceptions.OpenTelemetry</RootNamespace>
 	  <ImplicitUsings>enable</ImplicitUsings>
 
-	  <PackageId>BitzArt.ApiExceptions.AspNetCore.OpenTelemetry</PackageId>
+	  <PackageId>BitzArt.ApiExceptions.OpenTelemetry</PackageId>
 	  <Authors>BitzArt</Authors>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <RepositoryType>git</RepositoryType>

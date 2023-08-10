@@ -37,4 +37,4 @@ jobs:
         run: |
           dotnet nuget push ApiExceptions.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
           dotnet nuget push ApiExceptions.AspNetCore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
-          dotnet nuget push ApiExceptions.AspNetCore.OpenTelemetry.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
+          dotnet nuget push ApiExceptions.OpenTelemetry.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}

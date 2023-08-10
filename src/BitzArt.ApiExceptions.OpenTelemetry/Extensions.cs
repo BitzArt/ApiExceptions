@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 namespace BitzArt;
 
-public static partial class Telemetry
+public static partial class ApiExceptionTelemetry
 {
-    public static void TraceOpenTelemetry()
+    public static void EnableOpenTelemetry()
     {
         ApiException.Events.ApiExceptionThrown += HandleApiExceptionThrown;
     }
