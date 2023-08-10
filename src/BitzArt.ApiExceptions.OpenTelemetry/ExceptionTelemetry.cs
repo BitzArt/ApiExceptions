@@ -1,5 +1,7 @@
 ﻿using OpenTelemetry.Trace;
+using System;
 using System.Diagnostics;
+using System.Net;
 using System.Runtime.ExceptionServices;
 
 namespace BitzArt;
@@ -13,6 +15,17 @@ public static partial class ExceptionTelemetry
 
     private static void RecordExceptionThrown(object? sender, FirstChanceExceptionEventArgs e)
     {
-        Activity.Current.RecordException(e.Exception);
+        var activity = Activity.Current;
+        var ex = e.Exception;
+
+        if (activity is null || e is null) return;
+
+        if (!activity!.Events.Any(x => x.Name == "exception" &&
+            x.Tags.Any(xx =>
+                xx.Key == "exception.message"
+                && (string)xx.Value! == ex.Message)))
+        {
+            activity.RecordException(ex);
+        }
     }
 }
