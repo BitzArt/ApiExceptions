@@ -1,10 +1,10 @@
-name: Release BitzArt.ApiExceptions
+name: Release ApiExceptions
 
 on:
   repository_dispatch:
   push:
     tags:
-    - "ApiExceptions-v[0-9]+.[0-9]+.[0-9]+"
+    - "ApiExceptions-v[0-9]+.[0-9]+.[0-9]+*"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,8 +30,11 @@ jobs:
 
       - name: Build
         run: |
-          dotnet build src/BitzArt.ApiExceptions/BitzArt.ApiExceptions.csproj --configuration Release /p:Version=${VERSION}
-          dotnet pack src/BitzArt.ApiExceptions/BitzArt.ApiExceptions.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+          dotnet build ApiExceptions.sln --configuration Release /p:Version=${VERSION}
+          dotnet pack ApiExceptions.sln --configuration Release /p:Version=${VERSION} --no-build --output .
 
       - name: Push
-        run: dotnet nuget push BitzArt.ApiExceptions.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
+        run: |
+          dotnet nuget push ApiExceptions.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
+          dotnet nuget push ApiExceptions.AspNetCore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
+          dotnet nuget push ApiExceptions.AspNetCore.OpenTelemetry.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+	  <AssemblyName>BitzArt.ApiExceptions.AspNetCore</AssemblyName>
+	  <RootNamespace>BitzArt.ApiExceptions.AspNetCore</RootNamespace>
+	  <ImplicitUsings>enable</ImplicitUsings>
+
+	  <PackageId>BitzArt.ApiExceptions.AspNetCore.OpenTelemetry</PackageId>
+	  <Authors>BitzArt</Authors>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <RepositoryType>git</RepositoryType>
+	  <RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
+
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry" Version="1.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>

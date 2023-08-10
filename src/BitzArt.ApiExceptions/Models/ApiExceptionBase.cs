@@ -17,5 +17,7 @@ public abstract partial class ApiExceptionBase : Exception
     {
         StatusCode = statusCode;
         Payload = payload ?? new();
+
+        ApiException.Events.RaiseApiExceptionThrown(this);
     }
 }

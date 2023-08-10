@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNetCore.Tests", "tests\BitzArt.ApiExceptions.AspNetCore.Tests\BitzArt.ApiExceptions.AspNetCore.Tests.csproj", "{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.AspNetCore.OpenTelemetry", "src\BitzArt.ApiExceptions.AspNetCore.OpenTelemetry\BitzArt.ApiExceptions.AspNetCore.OpenTelemetry.csproj", "{F431B580-4D6A-4658-8256-4F7AEE0AA03C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF689FDE-D5BE-4852-A16A-066EDE5E71B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F431B580-4D6A-4658-8256-4F7AEE0AA03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F431B580-4D6A-4658-8256-4F7AEE0AA03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F431B580-4D6A-4658-8256-4F7AEE0AA03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F431B580-4D6A-4658-8256-4F7AEE0AA03C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{DC2B54EB-5BF8-406A-8C1A-E49508BA7BAC} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
 		{D9311895-F541-4816-BD05-1DF39C86A01B} = {633F6437-E58A-420F-AE01-7FDC6B7E2CA3}
 		{BF689FDE-D5BE-4852-A16A-066EDE5E71B8} = {633F6437-E58A-420F-AE01-7FDC6B7E2CA3}
+		{F431B580-4D6A-4658-8256-4F7AEE0AA03C} = {615B001B-EF7F-4F09-B2CB-383F169E4627}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2514CA0-588A-4092-97BB-4798EF9A6B72}
