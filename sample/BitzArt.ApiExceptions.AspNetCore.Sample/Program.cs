@@ -1,3 +1,4 @@
+using BitzArt;
 using BitzArt.ApiExceptions.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,9 +6,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddApiExceptionHandler(options =>
 {
-    // Disables using default values for 'type' field
+    // Disable using default values for 'type' field
     options.DisableDefaultTypeValues = true; 
+
+    // Enable all request logging
+    options.EnableRequestLogging = true;
+
+    // Enable logging of exceptions handled in the middleware
+    options.EnableErrorLogging = true;
 });
+
+ExceptionTelemetry.EnableOpenTelemetry();
 
 var app = builder.Build();
 

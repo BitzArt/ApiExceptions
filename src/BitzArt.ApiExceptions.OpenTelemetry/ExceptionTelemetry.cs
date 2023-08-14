@@ -1,7 +1,5 @@
 ﻿using OpenTelemetry.Trace;
-using System;
 using System.Diagnostics;
-using System.Net;
 using System.Runtime.ExceptionServices;
 
 namespace BitzArt;
