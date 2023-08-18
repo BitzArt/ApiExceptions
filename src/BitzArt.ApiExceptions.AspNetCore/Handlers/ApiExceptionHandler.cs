@@ -44,7 +44,7 @@ public class ApiExceptionHandler : IApiExceptionHandler
         if (exception is ApiExceptionBase apiException) return GetProblemDetails(apiException);
 
         _httpContext.Response.StatusCode = 500;
-        return new ProblemDetails(exception);
+        return new ProblemDetails(exception, addInner: _options.AddInnerExceptions);
     }
 
     private ProblemDetails GetProblemDetails(ApiExceptionBase apiException)

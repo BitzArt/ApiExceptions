@@ -32,15 +32,37 @@ public class ProblemDetails
     [JsonExtensionData]
     public IDictionary<string, object> Extensions { get; set; }
 
-    public ProblemDetails(ApiExceptionBase exception)
-        : this(exception, exception.Payload.Data)
+    public ProblemDetails(ApiExceptionBase exception, bool addInner = false)
+        : this(exception, exception.Payload.Data, addInner)
     {
     }
 
-    public ProblemDetails(Exception exception, IDictionary<string, object>? data = null)
+    public ProblemDetails(Exception exception, IDictionary<string, object>? data = null, bool addInner = false)
         : this(exception.Message, data)
     {
-        if (exception.InnerException is not null) Extensions.Add("inner", exception.InnerException.Message);
+        if (addInner)
+        {
+            var dict = AddInner(exception);
+            if (dict is null) return;
+            Extensions.Add("inner", dict);
+        }
+    }
+
+    // Adds inner exceptions recursively
+    private IDictionary<string, object>? AddInner(Exception exception)
+    {
+        var inner = exception.InnerException;
+
+        if (inner is null) return null;
+        var dict = new Dictionary<string, object>
+        {
+            { "title", inner.Message }
+        };
+
+        var next = AddInner(inner);
+        if (next is not null) dict["inner"] = next;
+
+        return dict;
     }
 
     public ProblemDetails(string? message = null, IDictionary<string, object>? data = null)

@@ -35,6 +35,49 @@ namespace BitzArt.ApiExceptions
         }
 
         [Fact]
+        public void CtorFromExceptionWithInnerException_NotIncludeInner_ReturnsProper()
+        {
+            var innerLevel3 = new Exception("Level 3");
+            var innerLevel2 = new Exception("Level 2", innerLevel3);
+            var innerLevel1 = new Exception("Level 1", innerLevel2);
+            var outter = new Exception("Outter", innerLevel1);
+
+            var problemDetails = new ProblemDetails(outter, addInner: false);
+
+            Assert.False(problemDetails.Extensions.Any());
+        }
+
+        [Fact]
+        public void CtorFromExceptionWithInnerException_IncludeInner_ReturnsProper()
+        {
+            var innerLevel3 = new Exception("Level 3");
+            var innerLevel2 = new Exception("Level 2", innerLevel3);
+            var innerLevel1 = new Exception("Level 1", innerLevel2);
+            var outter = new Exception("Outter", innerLevel1);
+
+            var problemDetails = new ProblemDetails(outter, addInner: true);
+
+            Assert.True(problemDetails.Extensions.Any());
+            Assert.Contains(problemDetails.Extensions, x => x.Key == "inner");
+
+            var level1 = (problemDetails.Extensions.First().Value as IDictionary<string, object>)!;
+            Assert.True(level1.Any());
+            Assert.Contains(level1, x => x.Key == "title");
+            Assert.Contains(level1, x => x.Key == "inner");
+
+            var level2 = (level1.First(x => x.Key == "inner").Value as IDictionary<string, object>)!;
+            Assert.True(level2.Any());
+            Assert.Contains(level2, x => x.Key == "title");
+            Assert.Contains(level2, x => x.Key == "inner");
+
+            var level3 = (level2.First(x => x.Key == "inner").Value as IDictionary<string, object>)!;
+            Assert.True(level3.Any());
+            Assert.Contains(level3, x => x.Key == "title");
+
+            Assert.DoesNotContain(level3, x => x.Key == "inner");
+        }
+
+        [Fact]
         public void AddErrorType_OnApiException_EndsUpInProblemDetails()
         {
             var exception = new CustomApiException();

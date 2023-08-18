@@ -14,6 +14,9 @@ builder.Services.AddApiExceptionHandler(options =>
 
     // Enable logging of exceptions handled in the middleware
     options.EnableErrorLogging = true;
+
+    // Adds Inner Exceptions to error responses recursively
+    options.AddInnerExceptions = true;
 });
 
 ExceptionTelemetry.EnableOpenTelemetry();
