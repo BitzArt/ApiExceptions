@@ -54,7 +54,7 @@ public class ApiExceptionHandler : IApiExceptionHandler
         var defaultErrorType = GetDefaultErrorType(apiException);
         if (defaultErrorType is not null) apiException.ErrorType = defaultErrorType;
 
-        return new ProblemDetails(apiException);
+        return new ProblemDetails(apiException, addInner: _options.AddInnerExceptions);
     }
 
     private string? GetDefaultErrorType(ApiExceptionBase apiException)
