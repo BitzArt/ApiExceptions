@@ -1,22 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-	  <AssemblyName>BitzArt.ApiExceptions.OpenTelemetry</AssemblyName>
-	  <RootNamespace>BitzArt.ApiExceptions.OpenTelemetry</RootNamespace>
-	  <ImplicitUsings>enable</ImplicitUsings>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+		<AssemblyName>BitzArt.ApiExceptions.OpenTelemetry</AssemblyName>
+		<RootNamespace>BitzArt.ApiExceptions.OpenTelemetry</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
 
-	  <PackageId>BitzArt.ApiExceptions.OpenTelemetry</PackageId>
-	  <Authors>BitzArt</Authors>
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <RepositoryType>git</RepositoryType>
-	  <RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
+		<PackageId>BitzArt.ApiExceptions.OpenTelemetry</PackageId>
+		<Authors>BitzArt</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
 
-	  <Nullable>enable</Nullable>
-  </PropertyGroup>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="OpenTelemetry" Version="1.5.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="OpenTelemetry" Version="1.5.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>BitzArt.ApiExceptions.OpenTelemetry.Tests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 
 </Project>
