@@ -5,14 +5,15 @@
 		<AssemblyName>BitzArt.ApiExceptions.AspNetCore</AssemblyName>
 		<RootNamespace>BitzArt.ApiExceptions.AspNetCore</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
 		<PackageId>BitzArt.ApiExceptions.AspNetCore</PackageId>
 		<Authors>BitzArt</Authors>
+		<Description>ApiExceptions Asp.Net Core implementation</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
-
-		<Nullable>enable</Nullable>
+		<PackageProjectUrl>https://github.com/BitzArt/ApiExceptions</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
