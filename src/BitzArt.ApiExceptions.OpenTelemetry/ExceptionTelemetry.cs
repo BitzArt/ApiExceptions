@@ -6,6 +6,10 @@ namespace BitzArt;
 
 public static partial class ExceptionTelemetry
 {
+    /// <summary>
+    /// This method will enable reporting of all exceptions that were raised
+    /// in your application to OpenTelemetry.
+    /// </summary>
     public static void EnableOpenTelemetry()
     {
         AppDomain.CurrentDomain.FirstChanceException += RecordExceptionThrown;

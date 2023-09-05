@@ -3,7 +3,7 @@ using Keys = BitzArt.ApiExceptions.ApiExceptionPayload.Keys;
 
 namespace BitzArt.ApiExceptions;
 
-public class ProblemDetails
+internal class ProblemDetails
 {
     private static IEnumerable<string> ReservedKeys => new List<string>
     {

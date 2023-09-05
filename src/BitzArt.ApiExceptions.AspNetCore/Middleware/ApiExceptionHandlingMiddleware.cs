@@ -3,8 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace BitzArt.ApiExceptions.AspNetCore;
 
-public class ApiExceptionHandlingMiddleware<THandler>
-    where THandler : IApiExceptionHandler
+internal class ApiExceptionHandlingMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ApiExceptionHandlerOptions _options;
@@ -15,7 +14,7 @@ public class ApiExceptionHandlingMiddleware<THandler>
         _options = options;
     }
 
-    public virtual async Task InvokeAsync(HttpContext context, THandler handler, ILogger<IApiExceptionHandler> logger)
+    public virtual async Task InvokeAsync(HttpContext context, IApiExceptionHandler handler, ILogger<IApiExceptionHandler> logger)
     {
         try
         {
