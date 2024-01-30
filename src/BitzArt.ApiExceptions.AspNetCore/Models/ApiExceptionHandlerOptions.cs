@@ -11,15 +11,15 @@ public class ApiExceptionHandlerOptions
     /// Enables logging for all requests.
     /// Will not log successful requests if ApiExceptionHandlingMiddleware is not enabled.
     /// </summary>
-    public bool EnableRequestLogging { get; set; } = false;
+    public bool LogRequests { get; set; } = false;
 
     /// <summary>
     /// Enables logging of handled exceptions.
     /// </summary>
-    public bool EnableErrorLogging { get; set; } = false;
+    public bool LogExceptions { get; set; } = false;
 
     /// <summary>
     /// Adds inner exceptions to error responses recursively.
     /// </summary>
-    public bool AddInnerExceptions { get; set; } = false;
+    public bool DisplayInnerExceptions { get; set; } = false;
 }

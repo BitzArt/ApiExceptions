@@ -1,31 +1,28 @@
-using BitzArt;
 using BitzArt.ApiExceptions.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
 builder.Services.AddApiExceptionHandler(options =>
 {
-    // Disable using default values for 'type' field
-    options.DisableDefaultTypeValues = true; 
+    // Disable using default values for the 'type' field
+    options.DisableDefaultTypeValues = true;
 
-    // Enables all request logging
-    options.EnableRequestLogging = true;
+    // Enables logging of all incoming requests
+    options.LogRequests = true;
 
     // Enables logging of handled exceptions
-    options.EnableErrorLogging = true;
+    options.LogExceptions = true;
 
-    // Adds Inner Exceptions to error responses recursively
-    options.AddInnerExceptions = true;
+    // Adds inner exceptions to error responses recursively
+    options.DisplayInnerExceptions = true;
 });
-
-// Reports all exceptions that occured in your application to OpenTelemetry
-ExceptionTelemetry.EnableOpenTelemetry();
 
 var app = builder.Build();
 
-// This will add a global exception handler to your request pipeline.
-// You can also use ApiExceptionFilter attribute instead.
+// This will add a global exception handler middleware to your request pipeline.
+// Use this before using your controllers as middleware order matters.
 app.UseApiExceptionHandler();
 
 app.MapControllers();

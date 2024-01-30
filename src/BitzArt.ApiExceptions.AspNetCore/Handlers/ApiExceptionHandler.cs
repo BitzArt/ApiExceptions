@@ -9,16 +9,18 @@ public class ApiExceptionHandler : IApiExceptionHandler
 {
     private readonly ApiExceptionHandlerOptions _options;
     private readonly HttpContext _httpContext;
-    private readonly ILogger _logger;
+    private readonly ILogger _requestLogger;
+    private readonly ILogger _exceptionLogger;
 
     public ApiExceptionHandler(
         ApiExceptionHandlerOptions options,
         IHttpContextAccessor contextAccessor,
-        ILogger<IApiExceptionHandler> logger)
+        ILoggerFactory loggerFactory)
     {
         _options = options;
         _httpContext = contextAccessor.HttpContext!;
-        _logger = logger;
+        _requestLogger = loggerFactory.CreateLogger("Request");
+        _exceptionLogger = loggerFactory.CreateLogger("ExceptionHandler");
     }
 
     public virtual async Task HandleAsync(Exception exception)
@@ -26,14 +28,14 @@ public class ApiExceptionHandler : IApiExceptionHandler
         var problem = exception.GetProblemDetails(_httpContext, _options);
         await _httpContext.Response.WriteAsync(JsonSerializer.Serialize(problem));
 
-        if (_options.EnableRequestLogging)
+        if (_options.LogRequests)
         {
             var req = _httpContext.Request;
-            _logger.LogInformation("{timestamp} {method} {path} : {statusCode}", string.Format("{0:u}", DateTime.Now), req.Method, req.Path, _httpContext.Response.StatusCode);
+            _requestLogger.LogInformation("{timestamp} {method} {path} : {statusCode}", string.Format("{0:u}", DateTime.Now), req.Method, req.Path, _httpContext.Response.StatusCode);
         }
-        if (_options.EnableErrorLogging)
+        if (_options.LogExceptions)
         {
-            _logger.LogError("{exception}", exception.ToStringDemystified());
+            _exceptionLogger.LogError(exception, "{exception}", exception.ToStringDemystified());
         }
     }
 }

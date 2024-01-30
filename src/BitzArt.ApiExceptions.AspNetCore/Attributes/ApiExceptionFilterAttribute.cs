@@ -26,12 +26,12 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
         var problem = exception.GetProblemDetails(httpContext, _options);
         context.Result = new ObjectResult(problem);
 
-        if (_options.EnableRequestLogging)
+        if (_options.LogRequests)
         {
             var req = httpContext.Request;
             _logger.LogInformation("{timestamp} {method} {path} : {statusCode}", string.Format("{0:u}", DateTime.Now), req.Method, req.Path, httpContext.Response.StatusCode);
         }
-        if (_options.EnableErrorLogging)
+        if (_options.LogExceptions)
         {
             _logger.LogError("{exception}", exception.ToStringDemystified());
         }

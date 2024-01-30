@@ -19,6 +19,6 @@ internal static class ExceptionExtensions
 
         httpContext.Response.ContentType = "application/problem+json";
         httpContext.Response.StatusCode = 500;
-        return new ProblemDetails(exception, addInner: options.AddInnerExceptions);
+        return new ProblemDetails(exception, addInner: options.DisplayInnerExceptions);
     }
 }

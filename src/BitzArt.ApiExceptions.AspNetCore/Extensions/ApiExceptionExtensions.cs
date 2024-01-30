@@ -16,7 +16,7 @@ internal static class ApiExceptionExtensions
         var defaultErrorType = apiException.GetDefaultErrorType(options);
         if (defaultErrorType is not null) apiException.ErrorType = defaultErrorType;
 
-        return new ProblemDetails(apiException, addInner: options.AddInnerExceptions);
+        return new ProblemDetails(apiException, addInner: options.DisplayInnerExceptions);
     }
 
     internal static string? GetDefaultErrorType(this ApiExceptionBase apiException, ApiExceptionHandlerOptions options)
