@@ -7,21 +7,28 @@ This library defines `ApiExceptions` that you can throw in your .Net application
 
 # Use with Asp.Net Core
 
-You can always refer to this [Asp.Net Core Sample project](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample) for guidance.
+> 💡
+> You can always refer to [this](https://github.com/BitzArt/ApiExceptions/tree/main/sample/BitzArt.ApiExceptions.AspNetCore.Sample) sample project for guidance.
 
 ## Setup:
 
-Add nuget package:
+Add the nuget package:
 
 ```
 dotnet add package BitzArt.ApiExceptions.AspNetCore
 ```
 
-Add these 2 lines of code to your `Program.cs`:
+Add this line to your `Program.cs` when configuring services:
 ```csharp
-builder.Services.AddApiExceptionHandler(); // When configuring services
-app.UseApiExceptionHandler(); // Before controllers
+builder.Services.AddApiExceptionHandler();
 ```
+
+Add this line to your `Program.cs` when configuring the request pipeline:
+```csharp
+// This line should go before any other middleware that might throw exceptions
+app.UseApiExceptionHandler();
+```
+
 ## Usage:
 Then, anywhere in your code, you can throw exceptions like:
 ```csharp
@@ -29,12 +36,12 @@ throw ApiException.NotFound("sample 'not found' message");
 ```
 This will generate an http response with appropriate status code:
 
-![404-screenshot](/docs/404-screenshot.png)
+![404-screenshot](./docs/404-screenshot.png)
 
  ## Extra:
 You can also add any custom fields:
 
-![anonymous-screenshot](/docs/anonymous-screenshot.png)
+![anonymous-screenshot](./docs/anonymous-screenshot.png)
 
 These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc/rfc7807) standard.
 
@@ -46,4 +53,4 @@ To use `ApiExceptions` in your applications, add this nuget package to your proj
 dotnet add package BitzArt.ApiExceptions
 ```
 
-The base package contains no handlers, so you will have to implement them yourself.
+This will allow you to use ApiExceptions, and you can then handle them as you see fit.

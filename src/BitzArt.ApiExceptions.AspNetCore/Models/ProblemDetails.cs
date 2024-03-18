@@ -17,6 +17,10 @@ public class ProblemDetails
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Title { get; set; }
 
+    [JsonPropertyName(Keys.Status)]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public int? Status { get; set; }
+
     [JsonPropertyName(Keys.ErrorType)]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? ErrorType { get; set; }

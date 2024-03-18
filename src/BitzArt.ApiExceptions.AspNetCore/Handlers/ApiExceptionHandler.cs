@@ -26,6 +26,12 @@ public class ApiExceptionHandler : IApiExceptionHandler
     public virtual async Task HandleAsync(Exception exception)
     {
         var problem = exception.GetProblemDetails(_httpContext, _options);
+
+        if (!_options.DisableDefaultProblemDetailsStatusValue)
+        {
+            problem.Status ??= _httpContext.Response.StatusCode;
+        }
+
         await _httpContext.Response.WriteAsync(JsonSerializer.Serialize(problem));
 
         if (_options.LogRequests)

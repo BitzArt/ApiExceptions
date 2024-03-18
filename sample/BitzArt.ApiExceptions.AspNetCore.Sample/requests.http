@@ -1,0 +1,30 @@
+# You can run the sample WebApi on your machine
+# and use these requests to try ApiExceptions in action!
+
+### Successful request
+GET http://localhost:80/success
+
+### ========= Predefined exceptions =========
+
+### NotFound
+GET http://localhost:80/predefined/notfound
+### BadRequest
+GET http://localhost:80/predefined/badrequest
+### Custom status code
+GET http://localhost:80/predefined/501
+
+### ========= Custom exceptions =========
+
+### Basic
+GET http://localhost:80/custom/basic
+
+### Payload
+GET http://localhost:80/custom/payload
+
+### Anonymous
+GET http://localhost:80/custom/anonymous
+
+### ========= Inner Exceptions =========
+
+### Inner
+GET http://localhost:80/inner

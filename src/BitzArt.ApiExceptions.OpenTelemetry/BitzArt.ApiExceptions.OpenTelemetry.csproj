@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
 		<AssemblyName>BitzArt.ApiExceptions.OpenTelemetry</AssemblyName>
 		<RootNamespace>BitzArt.ApiExceptions.OpenTelemetry</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -14,10 +14,15 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/BitzArt/ApiExceptions</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/BitzArt/ApiExceptions</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OpenTelemetry" Version="1.5.1" />
+		<None Include="..\..\README.md" Pack="True" Visible="False" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OpenTelemetry" Version="1.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>

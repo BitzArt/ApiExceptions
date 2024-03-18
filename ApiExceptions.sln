@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.AspNe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.OpenTelemetry", "src\BitzArt.ApiExceptions.OpenTelemetry\BitzArt.ApiExceptions.OpenTelemetry.csproj", "{F431B580-4D6A-4658-8256-4F7AEE0AA03C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitzArt.ApiExceptions.OpenTelemetry.Tests", "tests\BitzArt.ApiExceptions.OpenTelemetry.Tests\BitzArt.ApiExceptions.OpenTelemetry.Tests.csproj", "{81ED4DC9-5854-432F-9723-72372189FB9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitzArt.ApiExceptions.OpenTelemetry.Tests", "tests\BitzArt.ApiExceptions.OpenTelemetry.Tests\BitzArt.ApiExceptions.OpenTelemetry.Tests.csproj", "{81ED4DC9-5854-432F-9723-72372189FB9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

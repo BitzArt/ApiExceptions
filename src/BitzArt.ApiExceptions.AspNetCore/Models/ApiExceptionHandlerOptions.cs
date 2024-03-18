@@ -3,23 +3,34 @@
 public class ApiExceptionHandlerOptions
 {
     /// <summary>
-    /// Disables using default values for 'type' field in the response.
-    /// </summary>
-    public bool DisableDefaultTypeValues { get; set; } = false;
-
-    /// <summary>
-    /// Enables logging for all requests.
-    /// Will not log successful requests if ApiExceptionHandlingMiddleware is not enabled.
+    /// Enables logging for all requests. <br />
+    /// ⚠️ Will not log successful requests if ApiExceptionHandlingMiddleware is not enabled. <br />
+    /// Default: false
     /// </summary>
     public bool LogRequests { get; set; } = false;
 
     /// <summary>
-    /// Enables logging of handled exceptions.
+    /// Enables logging of handled exceptions. <br />
+    /// Default: false
     /// </summary>
     public bool LogExceptions { get; set; } = false;
 
     /// <summary>
-    /// Adds inner exceptions to error responses recursively.
+    /// Adds inner exceptions to ProblemDetails responses recursively. <br />
+    /// Default: false
     /// </summary>
     public bool DisplayInnerExceptions { get; set; } = false;
+
+    /// <summary>
+    /// Disables using default values for 'type' field in the ProblemDetails response. <br />
+    /// Default: false
+    /// </summary>
+    public bool DisableDefaultTypeValues { get; set; } = false;
+
+    /// <summary>
+    /// Disables adding the default 'status' values to the ProblemDetails response. <br />
+    /// Default 'status' values are based on the http status codes. <br />
+    /// Default: false
+    /// </summary>
+    public bool DisableDefaultProblemDetailsStatusValue { get; set; } = false;
 }
