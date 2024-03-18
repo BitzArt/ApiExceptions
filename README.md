@@ -32,18 +32,14 @@ app.UseApiExceptionHandler();
 ## Usage:
 Then, anywhere in your code, you can throw exceptions like:
 ```csharp
-throw ApiException.NotFound("sample 'not found' message");
+throw ApiException.BadRequest("your error message");
 ```
-This will generate an http response with appropriate status code:
+This will stop any further execution and generate an http response with an appropriate http status code.
 
-![404-screenshot](./docs/404-screenshot.png)
+The package handles both ApiExceptions as well as regular Exceptions. If the exception is of type `ApiException`, it will generate a response with the appropriate status code and message. If the exception is of type `Exception`, the status code will be `500`.
 
- ## Extra:
-You can also add any custom fields:
-
-![anonymous-screenshot](./docs/anonymous-screenshot.png)
-
-These responses follow [RFC7807: Problem Details](https://www.rfc-editor.org/rfc/rfc7807) standard.
+> 💡
+> These responses are aligned with [RFC7807: Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc7807).
 
 # Use outside of Asp.Net Core
 
@@ -53,4 +49,4 @@ To use `ApiExceptions` in your applications, add this nuget package to your proj
 dotnet add package BitzArt.ApiExceptions
 ```
 
-This will allow you to use ApiExceptions, and you can then handle them as you see fit.
+This will allow you to create and throw ApiExceptions, and you can then handle them as you see fit.
