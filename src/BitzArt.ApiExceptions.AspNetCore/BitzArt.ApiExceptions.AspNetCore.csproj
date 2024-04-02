@@ -6,6 +6,7 @@
 		<RootNamespace>BitzArt.ApiExceptions.AspNetCore</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
 		<PackageId>BitzArt.ApiExceptions.AspNetCore</PackageId>
 		<Authors>BitzArt</Authors>

@@ -6,6 +6,7 @@
 		<RootNamespace>BitzArt.ApiExceptions.OpenTelemetry</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
 		<PackageId>BitzArt.ApiExceptions.OpenTelemetry</PackageId>
 		<Authors>BitzArt</Authors>
