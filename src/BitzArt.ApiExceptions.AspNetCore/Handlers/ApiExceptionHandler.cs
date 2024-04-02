@@ -5,6 +5,9 @@ using System.Text.Json;
 
 namespace BitzArt.ApiExceptions.AspNetCore;
 
+/// <summary>
+/// Default <see cref="IApiExceptionHandler"/> implementation.
+/// </summary>
 public class ApiExceptionHandler : IApiExceptionHandler
 {
     private readonly ApiExceptionHandlerOptions _options;
@@ -12,6 +15,9 @@ public class ApiExceptionHandler : IApiExceptionHandler
     private readonly ILogger _requestLogger;
     private readonly ILogger _exceptionLogger;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ApiExceptionHandler"/> class.
+    /// </summary>
     public ApiExceptionHandler(
         ApiExceptionHandlerOptions options,
         IHttpContextAccessor contextAccessor,
@@ -23,6 +29,9 @@ public class ApiExceptionHandler : IApiExceptionHandler
         _exceptionLogger = loggerFactory.CreateLogger("ExceptionHandler");
     }
 
+    /// <summary>
+    /// Handles the exception and returns a problem details response.
+    /// </summary>
     public virtual async Task HandleAsync(Exception exception)
     {
         var problem = exception.GetProblemDetails(_httpContext, _options);

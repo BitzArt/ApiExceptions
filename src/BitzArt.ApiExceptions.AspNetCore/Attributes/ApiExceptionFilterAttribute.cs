@@ -7,11 +7,18 @@ using System.Diagnostics;
 
 namespace BitzArt.ApiExceptions;
 
+/// <summary>
+/// This attribute allows for the handling of exceptions thrown by the MVC controller.
+/// </summary>
 public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 {
     private static ApiExceptionHandlerOptions? _options;
     private static ILogger? _logger;
 
+    /// <summary>
+    /// Handles the exception and returns a problem details response.
+    /// </summary>
+    /// <param name="context"></param>
     public override void OnException(ExceptionContext context)
     {
         var httpContext = context.HttpContext;

@@ -1,5 +1,8 @@
 ﻿namespace BitzArt.ApiExceptions.AspNetCore;
 
+/// <summary>
+/// Allows configuring the API exception handler's behavior.
+/// </summary>
 public class ApiExceptionHandlerOptions
 {
     /// <summary>

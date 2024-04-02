@@ -1,8 +1,6 @@
 ﻿using BitzArt.ApiExceptions;
 using BitzArt.ApiExceptions.AspNetCore;
 using Microsoft.AspNetCore.Http;
-using System.Net;
-using System.Net.Http;
 
 namespace System;
 
