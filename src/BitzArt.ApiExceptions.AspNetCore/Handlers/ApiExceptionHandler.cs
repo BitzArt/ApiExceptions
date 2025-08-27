@@ -48,9 +48,25 @@ public class ApiExceptionHandler : IApiExceptionHandler
             var req = _httpContext.Request;
             _requestLogger.LogInformation("{timestamp} {method} {path} : {statusCode}", string.Format("{0:u}", DateTime.Now), req.Method, req.Path, _httpContext.Response.StatusCode);
         }
-        if (_options.LogExceptions)
+
+        LogException(exception);
+    }
+
+    private void LogException(Exception exception)
+    {
+        if (!_options.LogExceptions)
         {
-            _exceptionLogger.LogError(exception, "{exception}", exception.ToStringDemystified());
+            return;
         }
+
+        if (_options.DisableLoggingUserErrors
+            && exception is ApiExceptionBase apiException
+            && apiException.StatusCode >= 400
+            && apiException.StatusCode < 500)
+        {
+            return;
+        }
+
+        _exceptionLogger.LogError(exception, "{exception}", exception.ToStringDemystified());
     }
 }
