@@ -59,11 +59,12 @@ public class ApiExceptionHandler : IApiExceptionHandler
             return;
         }
 
-        if (_options.DisableLoggingUserErrors
+        if (_options.DemoteUserErrors
             && exception is ApiExceptionBase apiException
             && apiException.StatusCode >= 400
             && apiException.StatusCode < 500)
         {
+            _exceptionLogger.LogWarning("{exception}", exception.ToStringDemystified());
             return;
         }
 

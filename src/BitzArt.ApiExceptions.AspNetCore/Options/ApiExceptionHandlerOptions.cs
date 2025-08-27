@@ -38,8 +38,8 @@ public class ApiExceptionHandlerOptions
     public bool DisableDefaultProblemDetailsStatusValue { get; set; } = false;
 
     /// <summary>
-    /// Disables logging of user errors (4xx status codes) as application errors. <br />
+    /// Demotes user errors (4xx) to warning level logs instead of error level logs. <br />
     /// Default: false
     /// </summary>
-    public bool DisableLoggingUserErrors { get; set; } = false;
+    public bool DemoteUserErrors { get; set; } = false;
 }
