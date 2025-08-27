@@ -4,6 +4,9 @@ using System.Runtime.ExceptionServices;
 
 namespace BitzArt;
 
+/// <summary>
+/// Contains additional functionality for reporting ApiExceptions to OpenTelemetry.
+/// </summary>
 public static partial class ExceptionTelemetry
 {
     /// <summary>
