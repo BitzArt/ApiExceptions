@@ -42,4 +42,3 @@ jobs:
         run: |
           dotnet nuget push BitzArt.ApiExceptions.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
           dotnet nuget push BitzArt.ApiExceptions.AspNetCore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}
-          dotnet nuget push BitzArt.ApiExceptions.OpenTelemetry.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_APIKEY}

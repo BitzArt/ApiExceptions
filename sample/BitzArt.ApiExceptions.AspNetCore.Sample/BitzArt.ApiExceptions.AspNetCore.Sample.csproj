@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BitzArt.ApiExceptions.AspNetCore\BitzArt.ApiExceptions.AspNetCore.csproj" />
-    <ProjectReference Include="..\..\src\BitzArt.ApiExceptions.OpenTelemetry\BitzArt.ApiExceptions.OpenTelemetry.csproj" />
   </ItemGroup>
 
 </Project>

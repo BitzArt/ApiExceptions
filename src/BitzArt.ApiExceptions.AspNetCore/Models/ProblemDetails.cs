@@ -63,7 +63,7 @@ public class ProblemDetails
     /// </summary>
     /// <param name="exception">The exception indicating an API error</param>
     /// <param name="addInner">Whether or not to parse inner exceptions</param>
-    public ProblemDetails(ApiExceptionBase exception, bool addInner = false)
+    public ProblemDetails(ApiException exception, bool addInner = false)
         : this(exception, exception.Payload.Data, addInner)
     {
     }

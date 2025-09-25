@@ -1,4 +1,5 @@
-﻿using BitzArt.ApiExceptions;
+﻿using BitzArt;
+using BitzArt.ApiExceptions;
 using BitzArt.ApiExceptions.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using System.Net;
@@ -9,13 +10,13 @@ internal static class ExceptionExtensions
 {
     internal static int GetHttpStatusCode(this Exception exception)
     {
-        if (exception is ApiExceptionBase apiException) return apiException.StatusCode;
+        if (exception is ApiException apiException) return apiException.StatusCode;
         return (int)HttpStatusCode.InternalServerError;
     }
 
     internal static ProblemDetails GetProblemDetails(this Exception exception, HttpContext httpContext, ApiExceptionHandlerOptions options)
     {
-        if (exception is ApiExceptionBase apiException) return apiException.GetProblemDetails(httpContext, options);
+        if (exception is ApiException apiException) return apiException.GetProblemDetails(httpContext, options);
 
         httpContext.Response.ContentType = "application/problem+json";
         httpContext.Response.StatusCode = 500;

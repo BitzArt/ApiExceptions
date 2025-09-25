@@ -1,4 +1,5 @@
-﻿using BitzArt.ApiExceptions;
+﻿using BitzArt;
+using BitzArt.ApiExceptions;
 using BitzArt.ApiExceptions.AspNetCore;
 using Microsoft.AspNetCore.Http;
 
@@ -6,7 +7,7 @@ namespace System;
 
 internal static class ApiExceptionExtensions
 {
-    internal static ProblemDetails GetProblemDetails(this ApiExceptionBase apiException, HttpContext httpContext, ApiExceptionHandlerOptions options)
+    internal static ProblemDetails GetProblemDetails(this ApiException apiException, HttpContext httpContext, ApiExceptionHandlerOptions options)
     {
         httpContext.Response.ContentType = "application/problem+json";
         httpContext.Response.StatusCode = apiException.StatusCode;
@@ -17,7 +18,7 @@ internal static class ApiExceptionExtensions
         return new ProblemDetails(apiException, addInner: options.DisplayInnerExceptions);
     }
 
-    internal static string? GetDefaultErrorType(this ApiExceptionBase apiException, ApiExceptionHandlerOptions options)
+    internal static string? GetDefaultErrorType(this ApiException apiException, ApiExceptionHandlerOptions options)
     {
         if (apiException.ErrorType is not null) return null;
 
@@ -28,7 +29,7 @@ internal static class ApiExceptionExtensions
         return link;
     }
 
-    internal static bool GetUseDefaultTypeValue(this ApiExceptionBase apiException, ApiExceptionHandlerOptions options)
+    internal static bool GetUseDefaultTypeValue(this ApiException apiException, ApiExceptionHandlerOptions options)
     {
         if (options.DisableDefaultTypeValues) return false;
 

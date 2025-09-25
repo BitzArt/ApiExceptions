@@ -2,7 +2,7 @@
 
 namespace BitzArt.ApiExceptions.AspNetCore.Sample;
 
-public class MyAnonymousPayloadApiException : ApiExceptionBase
+public class MyAnonymousPayloadApiException : ApiException
 {
     private class SampleInnerObject
     {

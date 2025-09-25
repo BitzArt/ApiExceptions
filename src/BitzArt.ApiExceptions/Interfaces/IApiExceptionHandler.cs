@@ -6,7 +6,7 @@
 public interface IApiExceptionHandler
 {
     /// <summary>
-    /// Handles the exception, whether it is an <see cref="ApiExceptionBase">ApiException</see> or a regular <see cref="Exception"/>
+    /// Handles the exception.
     /// </summary>
     Task HandleAsync(Exception exception);
 }

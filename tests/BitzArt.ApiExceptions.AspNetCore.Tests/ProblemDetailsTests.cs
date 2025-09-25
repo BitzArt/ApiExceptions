@@ -137,7 +137,7 @@ namespace BitzArt.ApiExceptions
             Assert.Contains(pd.Extensions, x => x.Key == key && x.Value == value);
         }
 
-        private class CustomApiException : ApiExceptionBase
+        private class CustomApiException : ApiException
         {
             public CustomApiException() : base() { }
             public CustomApiException(string message) : base(message) { }

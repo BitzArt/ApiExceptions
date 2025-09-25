@@ -2,10 +2,7 @@
 
 namespace BitzArt;
 
-/// <summary>
-/// Allows for easy creation of API exceptions.
-/// </summary>
-public static partial class ApiException
+public partial class ApiException
 {
     /// <summary>
     /// Creates a new instance of <see cref="CustomApiException"/>
@@ -16,7 +13,7 @@ public static partial class ApiException
     /// <param name="payload"></param>
     /// <param name="innerException"></param>
     /// <returns></returns>
-    public static CustomApiException Custom
+    public static ApiException Custom
         (string message, ApiStatusCode statusCode = ApiStatusCode.Error, string? errorType = null, ApiExceptionPayload? payload = null, Exception? innerException = null)
         => new(message, statusCode, errorType, payload, innerException);
 
@@ -29,7 +26,7 @@ public static partial class ApiException
     /// <param name="payload"></param>
     /// <param name="innerException"></param>
     /// <returns></returns>
-    public static CustomApiException Custom
+    public static ApiException Custom
         (string message, int statusCode, string? errorType = null, ApiExceptionPayload? payload = null, Exception? innerException = null)
         => new(message, statusCode, errorType, payload, innerException);
 

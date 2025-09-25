@@ -29,7 +29,7 @@ public class ApiExceptionPayloadTests
         Assert.Contains(sut.Payload.Data, x => x.Key == "inner");
     }
 
-    private class Sut : ApiExceptionBase
+    private class Sut : ApiException
     {
         public Sut() : base() { }
     }

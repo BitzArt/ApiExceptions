@@ -3,7 +3,8 @@
 /// <summary>
 /// Represents a custom API exception.
 /// </summary>
-public class CustomApiException : ApiExceptionBase
+[Obsolete($"Use {nameof(ApiException)} instead.")]
+public class CustomApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="CustomApiException"/>
@@ -29,7 +30,7 @@ public class CustomApiException : ApiExceptionBase
 /// <summary>
 /// Represents an internal error API exception.
 /// </summary>
-public class InternalErrorApiException : ApiExceptionBase
+public class InternalErrorApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="InternalErrorApiException"/>
@@ -46,7 +47,7 @@ public class InternalErrorApiException : ApiExceptionBase
 /// <summary>
 /// Represents a bad request API exception.
 /// </summary>
-public class BadRequestApiException : ApiExceptionBase
+public class BadRequestApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="BadRequestApiException"/>
@@ -63,7 +64,7 @@ public class BadRequestApiException : ApiExceptionBase
 /// <summary>
 /// Represents a conflict API exception.
 /// </summary>
-public class ConflictApiException : ApiExceptionBase
+public class ConflictApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="ConflictApiException"/>
@@ -80,7 +81,7 @@ public class ConflictApiException : ApiExceptionBase
 /// <summary>
 /// Represents a forbidden API exception.
 /// </summary>
-public class ForbiddenApiException : ApiExceptionBase
+public class ForbiddenApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="ForbiddenApiException"/>
@@ -97,7 +98,7 @@ public class ForbiddenApiException : ApiExceptionBase
 /// <summary>
 /// Represents a method not allowed API exception.
 /// </summary>
-public class MethodNotAllowedApiException : ApiExceptionBase
+public class MethodNotAllowedApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="MethodNotAllowedApiException"/>
@@ -114,7 +115,7 @@ public class MethodNotAllowedApiException : ApiExceptionBase
 /// <summary>
 /// Represents a no content API exception.
 /// </summary>
-public class NoContentApiException : ApiExceptionBase
+public class NoContentApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="NoContentApiException"/>
@@ -131,7 +132,7 @@ public class NoContentApiException : ApiExceptionBase
 /// <summary>
 /// Represents a not found API exception.
 /// </summary>
-public class NotFoundApiException : ApiExceptionBase
+public class NotFoundApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="NotFoundApiException"/>
@@ -148,7 +149,7 @@ public class NotFoundApiException : ApiExceptionBase
 /// <summary>
 /// Represents an unauthorized API exception.
 /// </summary>
-public class UnauthorizedApiException : ApiExceptionBase
+public class UnauthorizedApiException : ApiException
 {
     /// <summary>
     /// Creates a new <see cref="UnauthorizedApiException"/>

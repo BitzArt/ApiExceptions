@@ -1,11 +1,39 @@
-﻿using Keys = BitzArt.ApiExceptions.ApiExceptionPayload.Keys;
+﻿using BitzArt.ApiExceptions;
+using Keys = BitzArt.ApiExceptions.ApiExceptionPayload.Keys;
 
-namespace BitzArt.ApiExceptions;
+namespace BitzArt;
 
 /// <summary>
 /// API Exception base class.
 /// </summary>
-public abstract partial class ApiExceptionBase : Exception
+public partial class ApiException : ApiExceptionBase
+{
+    /// <inheritdoc/>
+    public ApiException
+        (string message = "Unexpected Error",
+        ApiStatusCode statusCode = ApiStatusCode.Error,
+        string? errorType = null,
+        ApiExceptionPayload? payload = null,
+        Exception? innerException = null)
+        : base(message, statusCode, errorType, payload, innerException)
+    { }
+
+    /// <inheritdoc/>
+    public ApiException
+        (string message,
+        int statusCode,
+        string? errorType = null,
+        ApiExceptionPayload? payload = null,
+        Exception? innerException = null)
+        : base(message, statusCode, errorType, payload, innerException)
+    { }
+}
+
+/// <summary>
+/// API Exception base class.
+/// </summary>
+[Obsolete($"Use {nameof(ApiException)} instead.")]
+public abstract class ApiExceptionBase : Exception
 {
     /// <summary>
     /// API Status code
@@ -44,8 +72,7 @@ public abstract partial class ApiExceptionBase : Exception
     /// <param name="payload"></param>
     /// <param name="innerException"></param>
     protected ApiExceptionBase
-        (
-        string message,
+        (string message,
         int statusCode,
         string? errorType = null,
         ApiExceptionPayload? payload = null,

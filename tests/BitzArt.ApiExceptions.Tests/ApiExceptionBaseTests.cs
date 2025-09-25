@@ -30,7 +30,7 @@ public class ApiExceptionBaseTests
         Assert.Equal(errorType, sut.ErrorType);
     }
 
-    private class Sut : ApiExceptionBase
+    private class Sut : ApiException
     {
         public Sut() : base() { }
         public Sut(string message, ApiStatusCode statusCode = ApiStatusCode.Error)

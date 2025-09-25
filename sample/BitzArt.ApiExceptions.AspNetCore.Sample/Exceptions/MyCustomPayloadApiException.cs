@@ -2,7 +2,7 @@
 
 namespace BitzArt.ApiExceptions.AspNetCore.Sample;
 
-public class MyCustomPayloadApiException : ApiExceptionBase
+public class MyCustomPayloadApiException : ApiException
 {
     public MyCustomPayloadApiException()
     {
